@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lizzy School "Crew"</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Colors */
+      --color-bg-dark: #1e1b2e;
+      --color-card-bg: #ffffff;
+      --color-text-dark: #1e293b;
+      --color-text-muted: #475569;
+      --color-rainbow-1: #b827fc;
+      --color-rainbow-2: #2c90fc;
+      --color-rainbow-3: #22c55e;
+      --color-rainbow-4: #fec837;
+      --color-rainbow-5: #fd1892;
+
+      /* Gradient */
+      --rainbow-gradient: linear-gradient(135deg,
+          var(--color-rainbow-1) 0%,
+          var(--color-rainbow-2) 25%,
+          var(--color-rainbow-3) 50%,
+          var(--color-rainbow-4) 75%,
+          var(--color-rainbow-5) 100%);
+
+      --box-size: 160px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Vibrant radial dark background */
+      background: radial-gradient(circle at 20% 20%, #2e1065 0%, #0f172a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Header for Crew Page */
+    .page-title {
+      color: #ffffff;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* Container for crew cards */
+    .crew-container {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Crew Card: Flexbox layout for Picture Left, Info Right */
+    .crew-card {
+      background-color: var(--color-card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .crew-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Image Wrapper with Rounded Rainbow Border */
+    .profile-wrapper {
+      position: relative;
+      width: var(--box-size);
+      height: var(--box-size);
+      flex-shrink: 0;
+      border-radius: 25px;
+      padding: 5px; /* Border thickness */
+      background: var(--rainbow-gradient);
+    }
+
+    .profile-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px; /* Rounded inner image to match 25px outer radius */
+      background-color: var(--color-bg-dark);
+      display: block;
+    }
+
+    /* Right Text Info Styling */
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .info h1 {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #7c3aed;
+      font-weight: 700;
+    }
+
+    .info h2 {
+      font-size: 1.7rem;
+      color: var(--color-text-dark);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .info h3 {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      font-weight: 400;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    /* Responsive adjustment for mobile screens */
+    @media (max-width: 600px) {
+      .crew-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+      }
+
+      .info {
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="page-title">Meet Our Crew</h1>
+
+  <div class="crew-container">
+
+    <!-- Card 1: President -->
+    <div class="crew-card">
+      <div class="profile-wrapper">
+        <img src="img/president.png" alt="Melissa De Backer">
+      </div>
+      <div class="info">
+        <h1>President</h1>
+        <h2>Melissa De Backer</h2>
+        <h3>Leading Lizzy School with a vision for excellence in technology, robotics, and English immersion. Dedicated to building an environment where students learn with purpose and lead with honor.</h3>
+      </div>
+    </div>
+
+    <!-- Card 2: Vice President / Head of Engineering -->
+    <div class="crew-card">
+      <div class="profile-wrapper">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Head of Robotics">
+      </div>
+      <div class="info">
+        <h1>Head of Robotics & Engineering</h1>
+        <h2>Dr. Sarah Jenkins</h2>
+        <h3>Overseeing hands-on mechanical CAD modeling, microcontrollers, and hardware engineering labs to bring student invention ideas to life.</h3>
+      </div>
+    </div>
+
+    <!-- Card 3: Head of Computer Science -->
+    <div class="crew-card">
+      <div class="profile-wrapper">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Head of Computer Science">
+      </div>
+      <div class="info">
+        <h1>Head of Computer Science</h1>
+        <h2>Prof. Alex Mercer</h2>
+        <h3>Guiding full-stack web development, game logic architectures, and software engineering principles across all grade levels.</h3>
+      </div>
+    </div>
+
+    <!-- Card 4: Head of English Language Program -->
+    <div class="crew-card">
+      <div class="profile-wrapper">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Head of English Program">
+      </div>
+      <div class="info">
+        <h1>Head of English Immersion</h1>
+        <h2>Elena Rostova</h2>
+        <h3>Empowering students with fluent academic English, technical debate skills, and international presentation confidence.</h3>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
